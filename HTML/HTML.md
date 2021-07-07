@@ -97,5 +97,5 @@ type|MIME 타입|```text/css```
 
 ***
 웹 표준 검사 사이트 [W3C validator](https://validator.w3.org/#validate_by_upload)  
-html 요소 참고서[MDN](https://developer.mozilla.org/ko/)\/[W3Schools](https://www.w3schools.com/)
+html 요소 참고서 [MDN](https://developer.mozilla.org/ko/) \/ [W3Schools](https://www.w3schools.com/)
 
