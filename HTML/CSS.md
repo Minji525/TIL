@@ -162,8 +162,80 @@ input:focus {
 }
 ```  
 - __FIRST CHILD__  
-E가 형제 요소 중 첫번째 요소라면 선택 `E:first child`  
+E가 형제 요소 중 첫번째 요소라면 선택 `E:first-child`  
 
+- __LAST CHILD__  
+E가 형제 요소 중 마지막 요소라면 선택 `E:last-child`  
+
+```CSS
+.fruits li:last-child{
+    color: red;
+}
+```  
+```html
+<ul class="fruits">
+    <li>딸기</li>
+    <li>사과</li>
+    <li>바나나</li> <!--선택-->
+</ul>
+```  
+- __NTH CHILD__   
+E가 형제 요소 중 n번째 요소라면 선택 `E:nth-child(n)`  
+(n 키워드 사용시 0부터 해석)    
+
+```CSS
+.fruits li:nth-child(n+3){
+    color: red;
+}
+```  
+```html
+<ul class="fruits">
+    <li>딸기</li>
+    <li>사과</li>
+    <li>바나나</li> <!--선택-->
+    <li>수박</li> <!--선택-->
+</ul>
+```     
+> 2번 이후부터 선택  
+>> 오른쪽에서 왼쪽으로 해석하는 것이 더 정확  
+
+- __NTH OF TYPE__  
+E의 타입(태그이름)과 동일한 타입인 형제 요소 중 E가 n번째 요소라면 선택 `E:nth-of-type`  
+> 클래스를 태그이름처럼 쓰지 않도록 주의  
+
+- __부정 선택자__  
+S가 아닌 E선택 `E:not(S)`  
+
+### 가상 요소 선택자  
+- __BEFORE__  
+E요소 내부의 앞에, 내용을 삽입  `E::before`  
+content 속성 필수  
+
+- __AFTER__  
+E요소 내부의 뒤에, 내용을 삽입  `E::after`  
+
+### 속성 선택자  
+- __ATTR__  
+속성 attr을 포함한 요소 선택 `[attr]`  
+- __ATTR=VALUE__    
+속성 attr을 포함하며 속성 값이 value인 요소 선택 `[attr=value]`  
+- __ATTR$=VALUE__   
+속성 attr을 포함하며 속성 값이 value로 끝나는 요소 선택 `[attr$=value]`  
+
+## 상속  
+## 우선순위 결정  
+같은 요소가 여러 선언의 대상이 될 경우, 어떤 선언의 CSS속성을 우선 적용할지 결정하는 방법
+1. 명시도 점수가 높은 선언이 우선  
+2. 점수가 같은 경우, 가장 마지막에 해석되는 선언이 우선  
+3. 명시도는 '상속' 규칙보다 우선  
+4. `!important` 가 적용된 선언 방식이 다른 모든 방식보다 우선   
+ 
+> 인라인 선언 방식\>  
+> 아이디 선택자\>  
+> 클래스 선택자\>  
+> 태그 선택자\>  
+> 전체 선택자\>    
+> (not 선택자, 상속 계산x) 
 
 
 
